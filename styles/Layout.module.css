@@ -1,0 +1,68 @@
+.entirePage {
+  min-height: 100vh;
+}
+
+
+.appbar {
+  border: 0;
+  border-bottom: 1px;
+  border-color: lightgrey;
+  border-style: solid;
+  
+  padding: 1rem;
+  
+  position: sticky;
+  top: 0;
+  
+  z-index: 99;
+  
+  background-color: white;
+  
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.appbar img {
+  height: 35px;
+}
+
+
+
+.mainContainer {
+  display: flex;
+  min-height: 100%;
+}
+
+
+.sidebar {
+  padding: 1rem;
+  
+  width: 200px;
+  
+  position: fixed;
+  
+  z-index: 98;
+}
+
+
+.sidebarSeparator {
+  width: 1px;
+  background-color: lightgrey;
+  position: fixed;
+  top: 0;
+  left: 200px;
+  
+  height: 100vh;
+  
+  z-index: -99;
+}
+
+
+.main {
+  margin: 1rem;
+  margin-left: calc(201px + 1rem);
+}
