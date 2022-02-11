@@ -5,27 +5,27 @@ import styles from '../styles/Layout.module.css'
 
 export default function Layout({ children, pageName }) {
   return (
-    <div class={styles.entirePage}>
+    <div className={styles.entirePage}>
       <Head>
-        <title>{pageName + " | Service Name"}</title>
+        <title>{pageName + " | Sharon's Spices"}</title>
       </Head>
       
-      <header class={styles.appbar}>
-        <a href="/"><h1 class={styles.logo}><img src="/salt-shaker.svg" alt="" />&nbsp;Sharon's Spices</h1></a>
+      <header className={styles.appbar}>
+        <a href="/"><h1 className={styles.logo}><img src="/salt-shaker.svg" alt="" />&nbsp;Sharon's Spices</h1></a>
         <div>
           <img src="/user.svg" alt="Your Profile" />
         </div>
       </header>
       
-      <div class={styles.mainContainer}>
-        <div class={styles.sidebar}>
-          <ul class={styles.sidebarMenu}>
+      <div className={styles.mainContainer}>
+        <div className={styles.sidebar}>
+          <ul className={styles.sidebarMenu}>
             <li><a href="/new"><img src="/plus.svg" alt="" /> New Product</a></li>
           </ul>
-          <div class={styles.sidebarSeparator}></div>
+          <div className={styles.sidebarSeparator}></div>
         </div>
         
-        <main class={styles.main}>{children}</main>
+        <main className={styles.main}>{children}</main>
       </div>
     </div>
   )

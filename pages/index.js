@@ -2,45 +2,35 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Layout from '../components/layout'
+import ProductCard from '../components/product-card'
 
-export default function Home() {
+import '../lib/firebase.js'
+import { getDatabase, ref, val, onValue } from 'firebase/database'
+
+
+export default function Home({ data }) {
+  const db = getDatabase();
+  const dbRef = ref(db, '/products');
+  
+  var data = new Array();
+  
+  onValue(dbRef, (snapshot) => {
+    snapshot.forEach((child) => {
+    data.push({ 'key':child.key, 'data':child.val() });
+    });
+  });
+  
   return (
     <Layout pageName={"Homepage"}>
       <p>Welcome to our shop! Check out our products:</p>
       
-      <div class={styles.productList}>
-        <div class={styles.productCard}>
-          <div class={styles.productImageContainer}>
-            <img src="/placeholder.png" alt="" class={styles.productImage} />
-            <div class={styles.productButtons}>
-              <a href=""><img src="/pencil.svg" alt="Edit" /></a>
-              <a href=""><img src="/trash.svg" alt="Delete" /></a>
-            </div>
-          </div>
-          <p class={styles.productName}>Oregano</p>
-          <div>
-            <span class={styles.productPrice}>$4.99</span>
-            <span class={styles.productQty}>(300g/bag)</span>
-          </div>
-          <a href="" class={styles.buyButton}>Buy Now</a>
-        </div>
-        
-        <div class={styles.productCard}>
-          <div class={styles.productImageContainer}>
-            <img src="/placeholder.png" alt="" class={styles.productImage} />
-            <div class={styles.productButtons}>
-              <a href=""><img src="/pencil.svg" alt="Edit" /></a>
-              <a href=""><img src="/trash.svg" alt="Delete" /></a>
-            </div>
-          </div>
-          <p class={styles.productName}>Garlic powder</p>
-          <div>
-            <span class={styles.productPrice}>$3.99</span>
-            <span class={styles.productQty}>(300g/bag)</span>
-          </div>
-          <a href="" class={styles.buyButton}>Buy Now</a>
-        </div>
+      <div className={styles.productList}>
+        {data.map((prod) => {
+          return ( <ProductCard productKey={prod.key} title={prod.data.title} imageURL={prod.data.image} price={prod.data.price} qty={prod.data.qty} /> );
+        })}
       </div>
     </Layout>
   )
 }
+
+
