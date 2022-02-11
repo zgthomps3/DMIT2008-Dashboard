@@ -10,7 +10,13 @@ export default function Home() {
       
       <div class={styles.productList}>
         <div class={styles.productCard}>
-          <img src="" alt="" />
+          <div class={styles.productImageContainer}>
+            <img src="/placeholder.png" alt="" class={styles.productImage} />
+            <div class={styles.productButtons}>
+              <a href=""><img src="/pencil.svg" alt="Edit" /></a>
+              <a href=""><img src="/trash.svg" alt="Delete" /></a>
+            </div>
+          </div>
           <p class={styles.productName}>Oregano</p>
           <div>
             <span class={styles.productPrice}>$4.99</span>
@@ -20,7 +26,13 @@ export default function Home() {
         </div>
         
         <div class={styles.productCard}>
-          <img src="" alt="" />
+          <div class={styles.productImageContainer}>
+            <img src="/placeholder.png" alt="" class={styles.productImage} />
+            <div class={styles.productButtons}>
+              <a href=""><img src="/pencil.svg" alt="Edit" /></a>
+              <a href=""><img src="/trash.svg" alt="Delete" /></a>
+            </div>
+          </div>
           <p class={styles.productName}>Garlic powder</p>
           <div>
             <span class={styles.productPrice}>$3.99</span>

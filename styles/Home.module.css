@@ -23,13 +23,40 @@
   text-align: center;
 }
 
-.productCard img {
+.productImageContainer {
+  position: relative;
+}
+
+.productImage {
   border-style: solid;
   border-color: lightgrey;
   border-radius: 10px;
   border-width: 1px;
   
   width: 100%;
+}
+
+.productButtons {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.productButtons > * {
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  background-color: rgba(88,88,88,150);
+  margin-left: 0.5rem;
+}
+.productButtons img {
+  height: 1.25rem;
+  color: white;
+  filter: invert(100%);
+}
+
+.productButtons > *:hover {
+  background-color: rgba(32,32,32,150);
 }
 
 .productName {
