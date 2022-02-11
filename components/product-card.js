@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../styles/ProductCard.module.css'
 
 
@@ -10,8 +11,8 @@ export default function ProductCard({ productKey, title, imageURL, price, qty })
       <div className={styles.productImageContainer}>
         <img src={imageURL} alt="" className={styles.productImage} />
         <div className={styles.productButtons}>
-          <a href=""><img src="/pencil.svg" alt="Edit" /></a>
-          <a href=""><img src="/trash.svg" alt="Delete" /></a>
+          <Link href={{ pathname: '/edit-product', query: {productKey} }}><a><img src="/pencil.svg" alt="Edit" /></a></Link>
+          <Link href={{ pathname: '/delete-product', query: {productKey} }}><a><img src="/trash.svg" alt="Delete" /></a></Link>
         </div>
       </div>
       <p className={styles.productName}>{title}</p>

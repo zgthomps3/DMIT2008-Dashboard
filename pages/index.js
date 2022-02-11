@@ -8,18 +8,7 @@ import '../lib/firebase.js'
 import { getDatabase, ref, val, onValue } from 'firebase/database'
 
 
-export default function Home({ data }) {
-  const db = getDatabase();
-  const dbRef = ref(db, '/products');
-  
-  var data = new Array();
-  
-  onValue(dbRef, (snapshot) => {
-    snapshot.forEach((child) => {
-    data.push({ 'key':child.key, 'data':child.val() });
-    });
-  });
-  
+function Home({ data }) {
   return (
     <Layout pageName={"Homepage"}>
       <p>Welcome to our shop! Check out our products:</p>
@@ -34,3 +23,20 @@ export default function Home({ data }) {
 }
 
 
+export async function getServerSideProps() {
+  const db = getDatabase();
+  const dbRef = ref(db, '/products');
+  
+  var data = new Array();
+  
+  onValue(dbRef, (snapshot) => {
+    snapshot.forEach((child) => {
+      data.push({ 'key':child.key, 'data':child.val() });
+    });
+  });
+  
+  return { props: { data } };
+}
+
+
+export default Home
