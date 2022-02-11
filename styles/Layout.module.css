@@ -32,6 +32,27 @@
 
 
 
+.logo {
+  display: flex;
+  align-items: center;
+  
+  color: crimson;
+}
+
+.logo:hover {
+  color: darkred;
+}
+
+.logo img {
+  filter: invert(17%) sepia(69%) saturate(4869%) hue-rotate(339deg) brightness(87%) contrast(98%);
+}
+
+.logo:hover img {
+  filter: invert(4%) sepia(92%) saturate(7500%) hue-rotate(2deg) brightness(120%) contrast(104%);
+}
+
+
+
 .mainContainer {
   display: flex;
   min-height: 100%;
@@ -49,6 +70,24 @@
 }
 
 
+.sidebarMenu a {
+  display: flex;
+  align-items: center;
+}
+
+.sidebarMenu a:hover {
+  color: red;
+}
+.sidebarMenu a:hover img {
+  filter: invert(46%) sepia(93%) saturate(7481%) hue-rotate(352deg) brightness(96%) contrast(135%);
+}
+
+.sidebarMenu img {
+  height: 20px;
+  padding-right: 0.5rem;
+}
+
+
 .sidebarSeparator {
   width: 1px;
   background-color: lightgrey;
@@ -57,12 +96,12 @@
   left: 200px;
   
   height: 100vh;
-  
-  z-index: -99;
 }
 
 
 .main {
+  width: 100%;
+  
   margin: 1rem;
   margin-left: calc(201px + 1rem);
 }

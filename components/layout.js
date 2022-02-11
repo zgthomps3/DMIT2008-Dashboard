@@ -11,9 +11,7 @@ export default function Layout({ children, pageName }) {
       </Head>
       
       <header class={styles.appbar}>
-        <div>
-          <h1>This is just a global heading</h1>
-        </div>
+        <a href="/"><h1 class={styles.logo}><img src="/salt-shaker.svg" alt="" />&nbsp;Sharon's Spices</h1></a>
         <div>
           <img src="/user.svg" alt="Your Profile" />
         </div>
@@ -21,7 +19,9 @@ export default function Layout({ children, pageName }) {
       
       <div class={styles.mainContainer}>
         <div class={styles.sidebar}>
-          <p>This is the sidebar</p>
+          <ul class={styles.sidebarMenu}>
+            <li><a href="/new"><img src="/plus.svg" alt="" /> New Product</a></li>
+          </ul>
           <div class={styles.sidebarSeparator}></div>
         </div>
         
