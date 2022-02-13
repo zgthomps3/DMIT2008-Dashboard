@@ -9,6 +9,11 @@
   
   width: 12rem;
   padding: 1rem;
+  
+  cursor: pointer;
+  font: inherit;
+  
+  background-color: inherit;
 }
 
 
@@ -29,6 +34,15 @@
   background-color: darkred;
   color: white;
 }
+
+.greenButton {
+  border-color: darkgreen;
+  color: darkgreen;
+}
+.greenButton:hover {
+  background-color: darkgreen;
+  color: white;
+}
   
 
 
@@ -44,6 +58,23 @@
   flex-direction: row;
   gap: 1rem;
   margin-top: 1rem;
+}
+
+
+
+.formRow {
+  margin: auto;
+  max-width: 30rem;
+  text-align: right;
+  padding-bottom: 0.25rem;
+}
+
+.formRow > label {
+  padding-right: 0.5rem;
+}
+
+.formRow > input {
+  width: 60%;
 }
 
 
