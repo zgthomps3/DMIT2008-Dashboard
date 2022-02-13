@@ -19,12 +19,23 @@ export default function NewProduct() {
           
           <div className={styles.formRow}>
             <label htmlFor="price">Product Price</label>
-            <input type="text" id="price" name="price" required />
+            <input
+              type="number"
+              id="price"
+              name="price"
+              min="0.01"
+              step="0.01"
+              required />
           </div>
           
           <div className={styles.formRow}>
             <label htmlFor="qty">Quantity (g/bag)</label>
-            <input type="text" id="qty" name="qty" required />
+            <input
+              type="number"
+              id="qty"
+              name="qty"
+              min="1"
+              required />
           </div>
           
           <div className={styles.manageButtons}>
