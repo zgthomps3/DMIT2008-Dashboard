@@ -1,0 +1,49 @@
+
+
+.button {
+  display: block;
+  
+  border-style: solid;
+  border-radius: 3px;
+  border-width: 1px;
+  
+  width: 12rem;
+  padding: 1rem;
+}
+
+
+.blueButton {
+  border-color: darkblue;
+  color: darkblue;
+}
+.blueButton:hover {
+  background-color: darkblue;
+  color: white;
+}
+
+.redButton {
+  border-color: darkred;
+  color: darkred;
+}
+.redButton:hover {
+  background-color: darkred;
+  color: white;
+}
+  
+
+
+
+.center {
+  text-align: center;
+  margin: auto;
+}
+
+.manageButtons {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+

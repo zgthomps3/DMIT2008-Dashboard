@@ -105,3 +105,8 @@
   margin: 1rem;
   margin-left: calc(201px + 1rem);
 }
+
+
+.center {
+  text-align: center;
+}

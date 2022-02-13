@@ -25,7 +25,9 @@ export default function Layout({ children, pageName }) {
           <div className={styles.sidebarSeparator}></div>
         </div>
         
-        <main className={styles.main}>{children}</main>
+        <main className={styles.main}>
+          {children}
+        </main>
       </div>
     </div>
   )
