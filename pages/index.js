@@ -15,7 +15,7 @@ function Home({ data }) {
       
       <div className={styles.productList}>
         {data.map((prod) => {
-          return ( <ProductCard productKey={prod.key} title={prod.data.title} imageURL={prod.data.image} price={prod.data.price} qty={prod.data.qty} /> );
+          return ( <ProductCard key={prod.key} productKey={prod.key} title={prod.data.title} imageURL={prod.data.image} price={prod.data.price} qty={prod.data.qty} /> );
         })}
       </div>
     </Layout>

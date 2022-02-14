@@ -26,10 +26,6 @@
 }
 
 
-.appbar img {
-  height: 35px;
-}
-
 
 
 .logo {
@@ -82,9 +78,8 @@
   filter: invert(46%) sepia(93%) saturate(7481%) hue-rotate(352deg) brightness(96%) contrast(135%);
 }
 
-.sidebarMenu img {
-  height: 20px;
-  padding-right: 0.5rem;
+.sidebarMenu li > a > *:last-child {
+  padding-left: 0.5rem;
 }
 
 

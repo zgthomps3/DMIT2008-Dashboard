@@ -51,7 +51,7 @@ export default function DeleteProduct() {
     } else {
       rerenderPage(
         <div>
-          <p>Product with key "{productKey}" does not exist in the database.</p>
+          <p>Product with key &quot;{productKey}&quot; does not exist in the database.</p>
           <Link href="/"><a className={`${styles.button} ${styles.blueButton}`}>Return home</a></Link>
         </div>
       );

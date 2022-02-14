@@ -9,13 +9,13 @@ export default function ProductCard({ productKey, title, imageURL, price, qty,  
   return (
     <div className={styles.productCard}>
       <div className={styles.productImageContainer}>
-        <img src={imageURL} alt="" className={styles.productImage} />
+        <Image src={imageURL} layout="fill" alt="" className={styles.productImage} />
         {
           viewMode ? null :
           (
           <div className={styles.productButtons}>
-            <Link href={{ pathname: '/edit-product', query: {productKey} }}><a><img src="/pencil.svg" alt="Edit" /></a></Link>
-            <Link href={{ pathname: '/delete-product', query: {productKey} }}><a><img src="/trash.svg" alt="Delete" /></a></Link>
+            <Link href={{ pathname: '/edit-product', query: {productKey} }}><a><Image src="/pencil.svg" height={20} width={20} alt="Edit" /></a></Link>
+            <Link href={{ pathname: '/delete-product', query: {productKey} }}><a><Image src="/trash.svg" height={20} width={20} alt="Delete" /></a></Link>
           </div>
           )
         }
