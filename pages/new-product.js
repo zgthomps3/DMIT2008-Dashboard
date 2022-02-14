@@ -40,7 +40,7 @@ export default function NewProduct() {
           
           <div className={styles.manageButtons}>
             <button type="submit" className={`${styles.button} ${styles.greenButton}`}>Add product</button>
-            <Link href="/"><a className={`${styles.button} ${styles.blueButton}`}>Return home</a></Link>
+            <button className={`${styles.button} ${styles.blueButton}`} onClick={(e) => {location.assign('/');}}>Return home</button>
           </div>
         </form>
       </div>
