@@ -18,7 +18,7 @@ function rerenderPage(page) {
 
 
 
-export default function DeleteProduct() {
+export default function EditProduct() {
   const router = useRouter();
   const productKey = router.query.productKey;
   

@@ -24,13 +24,13 @@ function Home({ data }) {
 
 
 export async function getServerSideProps() {
-  const db = getDatabase();
-  const dbRef = ref(db, '/products');
+  const db = await getDatabase();
+  const dbRef = await ref(db, '/products');
   
   var data = new Array();
   
-  onValue(dbRef, (snapshot) => {
-    snapshot.forEach((child) => {
+  await onValue(dbRef, async (snapshot) => {
+    await snapshot.forEach((child) => {
       data.push({ 'key':child.key, 'data':child.val() });
     });
   });
